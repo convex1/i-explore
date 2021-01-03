@@ -21,3 +21,13 @@ Function to count total number of columns in a dataframe
 def count_columns(dataframe):
 
     return len(dataframe.columns)
+
+'''
+Function to count total number of values in a dataframe
+
+:param dataframe: dataframe to count
+'''
+
+def count_values(dataframe):
+
+    return len(dataframe.columns) * len(dataframe)
