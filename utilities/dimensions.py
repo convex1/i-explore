@@ -30,4 +30,4 @@ Function to count total number of values in a dataframe
 
 def count_values(dataframe):
 
-    return len(dataframe.columns) * len(dataframe)
+    return dataframe.shape
