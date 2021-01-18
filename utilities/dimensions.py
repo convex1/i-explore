@@ -30,4 +30,8 @@ Function to count total number of values in a dataframe
 
 def count_values(dataframe):
 
-    return dataframe.shape
+    return dataframe.size
+
+def count_non_null_size(dataframe):
+
+    return dataframe.dropna()

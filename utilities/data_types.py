@@ -2,12 +2,12 @@ import pandas as pd
 
 
 '''
-Function to get count of each data type
+Function to get count number of columns of each data type
 
 :param dataframe: dataframe to consider
 '''
 
 
-def get_data_types(dataframe):
+def count_data_type_columns(dataframe):
 
-    return None
+    return dataframe.dtypes.value_counts()
