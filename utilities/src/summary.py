@@ -8,108 +8,112 @@ Function to calculate average value of each column in the dataframe and return a
 :param columns_list: list of columns to calculate mean for
 '''
 
+class summary_of_dataframe():
 
-def get_average(dataframe, columns_list):
+    def __init__(self, input_dataframe):
+        self.dataframe = input_dataframe
 
-    average_dict = {}
-    columns = []
+    def get_average(dataframe, columns_list):
 
-    if len(columns) == 0:
-        columns = columns_list
-    else:
-        columns = dataframe.columns
+        average_dict = {}
+        columns = []
 
-    for i in columns:
-        average_dict[i] = dataframe[i].mean()
+        if len(columns) == 0:
+            columns = columns_list
+        else:
+            columns = dataframe.columns
 
-    return average_dict
+        for i in columns:
+            average_dict[i] = dataframe[i].mean()
 
-
-'''
-Function to calculate median value of each column in the dataframe and return as a dictionary
-
-:param dataframe: dataframe to consider
-:param columns_list: list of columns to calculate median for
-'''
+        return average_dict
 
 
-def get_median(dataframe, columns_list = []):
+    '''
+    Function to calculate median value of each column in the dataframe and return as a dictionary
+    
+    :param dataframe: dataframe to consider
+    :param columns_list: list of columns to calculate median for
+    '''
 
-    median_dict = {}
-    columns = []
 
-    if len(columns) == 0:
-        columns = columns_list
-    else:
-        columns = dataframe.columns
+    def get_median(dataframe, columns_list = []):
 
-    for i in columns:
-        median_dict[i] = dataframe[i].median()
+        median_dict = {}
+        columns = []
 
-    return median_dict
+        if len(columns) == 0:
+            columns = columns_list
+        else:
+            columns = dataframe.columns
 
-'''
-Function to calculate mode value of each column in the dataframe and return as a dictionary
+        for i in columns:
+            median_dict[i] = dataframe[i].median()
 
-:param dataframe: dataframe to consider
-:param columns_list: list of columns to calculate mode for
-'''
+        return median_dict
 
-def get_mode(dataframe, columns_list):
+    '''
+    Function to calculate mode value of each column in the dataframe and return as a dictionary
+    
+    :param dataframe: dataframe to consider
+    :param columns_list: list of columns to calculate mode for
+    '''
 
-    mode_dict = {}
-    columns = []
+    def get_mode(dataframe, columns_list):
 
-    if len(columns) == 0:
-        columns = columns_list
-    else:
-        columns = dataframe.columns
+        mode_dict = {}
+        columns = []
 
-    for i in columns:
-        mode_dict[i] = dataframe[i].mode()
+        if len(columns) == 0:
+            columns = columns_list
+        else:
+            columns = dataframe.columns
 
-    return mode_dict
+        for i in columns:
+            mode_dict[i] = dataframe[i].mode()
 
-'''
-Function to calculate variance of each column in the dataframe and return as a dictionary
+        return mode_dict
 
-:param dataframe: dataframe to consider
-:param columns_list: list of columns to calculate range for
-'''
+    '''
+    Function to calculate variance of each column in the dataframe and return as a dictionary
+    
+    :param dataframe: dataframe to consider
+    :param columns_list: list of columns to calculate range for
+    '''
 
-def get_variance(dataframe, columns_list):
+    def get_variance(dataframe, columns_list):
 
-    range_dict = {}
-    columns = []
+        range_dict = {}
+        columns = []
 
-    if len(columns) == 0:
-        columns = columns_list
-    else:
-        columns = dataframe.columns
+        if len(columns) == 0:
+            columns = columns_list
+        else:
+            columns = dataframe.columns
 
-    for i in columns:
-        range_dict[i] = dataframe[i].var()
+        for i in columns:
+            range_dict[i] = dataframe[i].var()
 
-    return range_dict
+        return range_dict
 
-'''
-Function to calculate range value of each column in the dataframe and return as a dictionary
+    '''
+    Function to calculate range value of each column in the dataframe and return as a dictionary
+    
+    :param dataframe: dataframe to consider
+    :param columns_list: list of columns to calculate range for
+    '''
 
-:param dataframe: dataframe to consider
-:param columns_list: list of columns to calculate range for
-'''
+    def get_range(dataframe, columns_list):
 
-def get_range(dataframe, columns_list):
+        range_dict = {}
+        columns = []
 
-    range_dict = {}
-    columns = []
+        if len(columns) == 0:
+            columns = columns_list
+        else:
+            columns = dataframe.columns
 
-    if len(columns) == 0:
-        columns = columns_list
-    else:
-        columns = dataframe.columns
+        for i in columns:
+            range_dict[i] = dataframe[i].max() - dataframe[i].min()
 
-    for i in columns:
-        range_dict[i] = dataframe[i].max() - dataframe[i].min()
-
-    return range_dict
+        return range_dict
