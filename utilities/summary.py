@@ -71,6 +71,28 @@ def get_mode(dataframe, columns_list):
     return mode_dict
 
 '''
+Function to calculate variance of each column in the dataframe and return as a dictionary
+
+:param dataframe: dataframe to consider
+:param columns_list: list of columns to calculate range for
+'''
+
+def get_variance(dataframe, columns_list):
+
+    range_dict = {}
+    columns = []
+
+    if len(columns) == 0:
+        columns = columns_list
+    else:
+        columns = dataframe.columns
+
+    for i in columns:
+        range_dict[i] = dataframe[i].var()
+
+    return range_dict
+
+'''
 Function to calculate range value of each column in the dataframe and return as a dictionary
 
 :param dataframe: dataframe to consider
