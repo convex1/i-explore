@@ -1,6 +1,5 @@
 import pandas as pd
 
-
 '''
 Function to calculate average value of each column in the dataframe and return as a dictionary
 
@@ -10,21 +9,22 @@ Function to calculate average value of each column in the dataframe and return a
 
 class summary_of_dataframe():
 
-    def __init__(self, input_dataframe):
+    def __init__(self, input_dataframe, columns_list):
         self.dataframe = input_dataframe
+        self.columns_list = columns_list
 
-    def get_average(dataframe, columns_list):
+    def get_average(self):
 
         average_dict = {}
         columns = []
 
         if len(columns) == 0:
-            columns = columns_list
+            columns = self.columns_list
         else:
-            columns = dataframe.columns
+            columns = self.dataframe.columns
 
         for i in columns:
-            average_dict[i] = dataframe[i].mean()
+            average_dict[i] = self.dataframe[i].mean()
 
         return average_dict
 
@@ -37,18 +37,18 @@ class summary_of_dataframe():
     '''
 
 
-    def get_median(dataframe, columns_list = []):
+    def get_median(self):
 
         median_dict = {}
         columns = []
 
         if len(columns) == 0:
-            columns = columns_list
+            columns = self.columns_list
         else:
-            columns = dataframe.columns
+            columns = self.dataframe.columns
 
         for i in columns:
-            median_dict[i] = dataframe[i].median()
+            median_dict[i] = self.dataframe[i].median()
 
         return median_dict
 
@@ -59,18 +59,18 @@ class summary_of_dataframe():
     :param columns_list: list of columns to calculate mode for
     '''
 
-    def get_mode(dataframe, columns_list):
+    def get_mode(self):
 
         mode_dict = {}
         columns = []
 
         if len(columns) == 0:
-            columns = columns_list
+            columns = self.columns_list
         else:
-            columns = dataframe.columns
+            columns = self.dataframe.columns
 
         for i in columns:
-            mode_dict[i] = dataframe[i].mode()
+            mode_dict[i] = self.dataframe[i].mode()
 
         return mode_dict
 
@@ -81,18 +81,18 @@ class summary_of_dataframe():
     :param columns_list: list of columns to calculate range for
     '''
 
-    def get_variance(dataframe, columns_list):
+    def get_variance(self):
 
         range_dict = {}
         columns = []
 
         if len(columns) == 0:
-            columns = columns_list
+            columns = self.columns_list
         else:
-            columns = dataframe.columns
+            columns = self.dataframe.columns
 
         for i in columns:
-            range_dict[i] = dataframe[i].var()
+            range_dict[i] = self.dataframe[i].var()
 
         return range_dict
 
@@ -103,17 +103,17 @@ class summary_of_dataframe():
     :param columns_list: list of columns to calculate range for
     '''
 
-    def get_range(dataframe, columns_list):
+    def get_range(self):
 
         range_dict = {}
         columns = []
 
         if len(columns) == 0:
-            columns = columns_list
+            columns = self.columns_list
         else:
-            columns = dataframe.columns
+            columns = self.dataframe.columns
 
         for i in columns:
-            range_dict[i] = dataframe[i].max() - dataframe[i].min()
+            range_dict[i] = self.dataframe[i].max() - self.dataframe[i].min()
 
         return range_dict
