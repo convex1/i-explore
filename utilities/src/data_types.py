@@ -12,6 +12,6 @@ class dimensions_of_dataframe():
     def __init__(self, input_dataframe):
         self.dataframe = input_dataframe
 
-    def count_data_type_columns(dataframe):
+    def count_data_type_columns(self):
 
-        return dataframe.dtypes.value_counts()
+        return self.dataframe.dtypes.value_counts()

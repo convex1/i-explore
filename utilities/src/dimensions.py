@@ -1,37 +1,41 @@
 import pandas as pd
 import numpy as np
 
+class dimensions_of_dataframe():
 
-'''
-Function to count total number of rows in a dataframe
+    def __init__(self, input_dataframe):
+        self.dataframe = input_dataframe
 
-:param dataframe: dataframe to count
-'''
+    '''
+    Function to count total number of rows in a dataframe
+    
+    :param dataframe: dataframe to count
+    '''
 
-def count_rows(dataframe):
+    def count_rows(self):
 
-    return len(dataframe)
+        return len(self.dataframe)
 
-'''
-Function to count total number of columns in a dataframe
+    '''
+    Function to count total number of columns in a dataframe
+    
+    :param dataframe: dataframe to count
+    '''
 
-:param dataframe: dataframe to count
-'''
+    def count_columns(self):
 
-def count_columns(dataframe):
+        return len(self.dataframe.columns)
 
-    return len(dataframe.columns)
+    '''
+    Function to count total number of values in a dataframe
+    
+    :param dataframe: dataframe to count
+    '''
 
-'''
-Function to count total number of values in a dataframe
+    def count_values(self):
 
-:param dataframe: dataframe to count
-'''
+        return self.dataframe.size
 
-def count_values(dataframe):
+    def count_non_null_size(self):
 
-    return dataframe.size
-
-def count_non_null_size(dataframe):
-
-    return dataframe.dropna()
+        return self.dataframe.dropna()
